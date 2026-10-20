@@ -1,0 +1,22 @@
+# Local development: cp config.yaml.example config.yaml
+# Production (ENV=production): /etc/slack-thread-alert-config/config.yaml
+
+app:
+  name: slack-thread-alert
+
+  http_server:
+    listen_address: 0.0.0.0
+    port: "3000"
+    graceful_timeout: 30s
+    read_timeout: 30s
+    write_timeout: 30s
+    idle_timeout: 120s
+
+  logger:
+    level: debug
+    debug: true
+
+client:
+  slack:
+    bot_token: "xoxb-your-bot-token"
+    signing_secret: "your-signing-secret"
