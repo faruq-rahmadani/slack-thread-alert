@@ -12,6 +12,7 @@ func registerRouters(e *echo.Echo, ctrl *controller.Controller) {
 
 	webhook := e.Group("/webhook")
 	webhook.POST("/datadog", ctrl.DatadogController.DatadogAlertWebhook)
+	webhook.POST("/scalyr", ctrl.ScalyrController.ScalyrAlertWebhook)
 }
 
 func healthcheckHandler(c echo.Context) error {
